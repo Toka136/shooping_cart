@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+   <header>
+        <div class="headcontainer">
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="">
+            </div>
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link" href="#">Servieces</a>
+                      <a class="nav-link" href="#">About</a>
+                      <a class="nav-link" href="#">Contact</a>
+                      <div class="person nav-link">
+                        <div class="data">
+                          <div class="name">
+                            <h2 id="data">name</h2>
+                            <i class="fa-solid fa-caret-down" id="b-s-l" onclick="showdata()"></i>
+                          </div>
+                          <div class="logout hidden" id="logout">
+                            <a href= "logout.html">
+                          <button><span >log out</span>
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                          </a>
+                          </div>
+                        </div>
+                    </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            
+        </div>
+    </header>
+   
+    <div class="cart">
+      <span class="count" value="0">0</span>
+      <i class="fa-solid fa-cart-shopping" id="carticon"></i>
+    </div>
+    <div class="gallery">
+      <div class="contain">
+      <div class="cont" >
+       
+        <div class="card" >
+          <img src="images/imag1.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Burger Box</h5>
+         
+            <p class="card-text">Burger sandwich and potato packet.</p>
+            <h5 class="card-title">70$</h5>
+            <a href="#" class="btn btn-primary" id="0">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" >
+          <img src="images/imag2.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pizza</h5>
+     
+            <p class="card-text">Vegetable pizza (tomato, cucumber)</p>
+            <h5 class="card-title">100$</h5>
+            <a href="#" class="btn btn-primary" id="1">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" >
+          <img src="images/imag3.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Big Box</h5>
+            
+            <p class="card-text">Shawarma sandwich, fries and Pepsi</p>
+            <h5 class="card-title">80$</h5>
+            <a href="#" class="btn btn-primary" id="2">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" >
+          <img src="images/imag4.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Break Fast</h5>
+            
+            <p class="card-text">Cheese sandwich and coffee</p>
+            <h5 class="card-title">120$</h5>
+            <a href="#" class="btn btn-primary" id="3">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/imag5.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Burger Box-2</h5>
+           
+            <p class="card-text">Burger sandwich and ketchup </p>
+            <h5 class="card-title">110$</h5>
+            <a href="#" class="btn btn-primary" id="4">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/imag6.avif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Family Box</h5>
+            <p class="card-text">2 pizza, salad and fries</p>
+            <h5 class="card-title">90$</h5>
+            <a href="#" class="btn btn-primary" id="5">Add To Cart</a>
+          </div>
+        </div>
+      
+      </div>
+      <div class="products hidden">
+        <h1>Cart</h1>
+        <ul></ul>
+        <div class="buttons">
+          <div class="totalprice">
+            0.0
+          </div>
+          <button id="close">close</button>
+        </div>
+      </div>
+    
+    </div>
+    </div>
+    <script src="js/bootstrap.js"></script>
+    <script src="main.js"></script>
+    </body>
