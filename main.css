@@ -540,7 +540,7 @@ ul
 {
     list-style: none;
     padding: 5px;
-    height: 90%;
+    height: fit-content;
 }
 .maindiv
 {

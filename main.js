@@ -27,34 +27,33 @@ let minus_buttons=[];
 
 function plus_Prod()
 {
-    console.log("in");
+    // console.log("in");
 
     plus_buttons.forEach(element => {
         // console.log(element);
         element.onclick=function()
         {
-            console.log("#".repeat(10));
+            // console.log("#".repeat(10));
             let i=element.getAttribute("id");
             // list of products of current user
             let list=currentuser.products;
-            console.log(list);
+            // console.log(list);
             // product want to plus
             let x=currentProd[i];
-            console.log("#".repeat(10));
-            console.log(x);
+            // console.log("#".repeat(10));
+            // console.log(x);
             for(let i=0;i<list.length;i++)
             {
                 if(x.id===list[i].id)
                 {
                     list[i].value++;
-                    console.log("pric"+list[i].price)
+                    // console.log("pric"+list[i].price)
                     currentuser.price+=parseInt(list[i].price);
                      let pc=element.previousSibling;
                     pc.innerHTML= list[i].value;
                     totalprice1.innerHTML= currentuser.price;
                    
-                    console.log("#".repeat(10));
-                    // console.log("v"+value);
+                    
                     let value =currentuser.cart;
                     value=parseInt(value);
                     value=value+1;
@@ -75,21 +74,20 @@ function plus_Prod()
 // ===========================================
 function Minus_Prod()
 {
-    console.log("in");
+
 
     minus_buttons.forEach(element => {
         // console.log(element);
         element.onclick=function()
         {
-            console.log("#".repeat(10));
+            
             let i=element.getAttribute("id");
             // list of products of current user
             let list=currentuser.products;
-            console.log(list);
+            
             // product want to plus
             let x=currentProd[i];
-            console.log("#".repeat(10));
-            console.log(x);
+          
             for(let i=0;i<list.length;i++)
             {
                 if(x.id===list[i].id)
@@ -108,7 +106,7 @@ function Minus_Prod()
                         currentuser.cart=value;
                         let a=this.parentNode;
                         let b=a.parentNode;
-                        console.log(b);
+                        
                         b.classList.add("hidden");
                         currentuser.products.splice(i,1);
                     }
@@ -177,21 +175,7 @@ function getdata()
         currentuser=JSON.parse(user);
         // console.log(currentuser.name);
        let x= currentuser.products.length;
-       console.log(x);
-    //    let y=localStorage.getItem("cartcount");
-    //    if( y)
-    //    {
-    //     let z=JSON.parse(y);
-    //     console.log("z"+z);
-    //     cartcount.setAttribute("value",z);
-       
-    //    }
-    //     else
-    //     {
-    //         console.log("z");
-    //         cartcount.setAttribute("value",0);
-          
-    //     } 
+     
          cartcount.innerHTML=currentuser.cart;
         for(let i=0;i<x;i++)
             {
@@ -214,13 +198,11 @@ window.onload=function()
     getdata();
     plus_buttons= document.querySelectorAll(".plus");
     minus_buttons= document.querySelectorAll(".minus");
-    // console.log(plus_buttons)
     Minus_Prod();
     plus_Prod();
     addToCart();
 }
-// setInterval(Minus_Prod(),1000);
-// setInterval(plus_Prod(),1000);
+
 
 
 
@@ -231,13 +213,7 @@ function addToCart()
    
         element.onclick=function()
         {
-        //     let value =cartcount.getAttribute("value");
-        //    value=parseInt(value);
-        //    value=value+1;
-        //    cartcount.innerHTML=value;
-        //    cartcount.setAttribute("value",value);
-        //    localStorage.setItem("cartcount",cartcount.getAttribute("value"));
-        // //    cartcount.innerHTML=
+        
            let p_id=element.getAttribute("id");
            addproduct(currentProd[parseInt(p_id)]);
          
@@ -292,9 +268,9 @@ function addproduct(product)
     img_name.append(prodname);
    let price=document.createElement('p');
    price.innerHTML=product.price;
-   console.log(price);
+ 
   currentuser.price+=parseInt(product.price);
-  console.log(currentuser.price);
+  
 //   users[currentuser.id].price+=parseInt(product.price);
    let Pvalue=document.createElement('div');
    Pvalue.classList.add("Pcount");
@@ -309,13 +285,9 @@ function addproduct(product)
 //    users[currentuser.id].products.push(product);
    currentuser.products.push(product);
    totalprice1.innerHTML= currentuser.price;
-   console.log("*".repeat(10));
-   console.log(currentuser);
-   console.log(users[currentuser.id]);
+  
    users[currentuser.id]=currentuser;
-   console.log("*".repeat(10));
-   console.log(currentuser);
-   console.log(users[currentuser.id]);
+  
    localStorage.setItem("users",JSON.stringify(users));
    localStorage.setItem("currentuser",JSON.stringify(currentuser));
    
